@@ -1,48 +1,27 @@
-/*
- * CSS File for the solution
- * Assignment 03
- * You can modify these styles but you don't have to
- */
+/* Step 1: Define Core Colors in :root */
 
-/*
- VARIABLES
-*/
 :root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
+  --colour-amaranth: #ebdedf;
   --colour-peppermint: #f1faee;
   --colour-aquaisland: #a8dadc;
   --colour-wedgewood: #457b9d;
   --colour-cello: #1d3557;
-
-  /* Header configuration */
   --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
   --body-default-colour: var(--colour-cello);
   --body-background-colour: var(--colour-peppermint);
 }
 
-/*
-  PAGE / BODY
-*/
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
-}
+/* Step 2: Style the Main Container */
 
 main {
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Step 3: Screen Reader Text Utility Class */
 
-/****** Screen reader text utility clsas *******/
 .sr-only {
   position: absolute;
   width: 1px;
@@ -53,4 +32,142 @@ main {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Step 4: Style the Section Container */
+
+section {
+  width: 590px;
+  height: 450px;
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 85px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Step 5: Set the Background Image for the Body */
+
+body {
+  background-image: url(./images/news.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Step 6: Style the Header 1 (h1) Element */
+
+h1 {
+  color: #0c0202;
+  margin-bottom: 1rem;
+  position: absolute;
+  margin-top: 0.5rem;
+  top: 0;
+  left: 0;
+  margin-left: 1rem;
+}
+
+/* Step 7: Style the Unordered List (ul) */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Step 8: Style List Item (li) */
+
+li {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* Step 9: Add Hover Effect to List Item */
+
+li:hover {
+  background-color: var(--colour-aquaisland);
+}
+
+/* Step 10: Style Completed List Items */
+
+.completed {
+  color: #555;
+  text-decoration: line-through;
+}
+
+/* Step 11: Style Delete Button on Hover */
+
+.delete-button:hover {
+  background-color: #d00000;
+}
+
+/* Step 12: Style the Breaking News Banner */
+
+.BreakingNews {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  height: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* Step 13: Style the Spidey Image with Animation */
+
+.spidey {
+  width: 150px;
+  height: 107px;
+  margin-bottom: 2rem;
+  background-image: url(./images/spppp123.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation-name: slide;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  transform: translate(0, -50%);
+  animation-timing-function: ease-in-out;
+}
+
+/* Step 14: Define Keyframes for Spidey Animation */
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Step 15: Add Media Query for Small Screens (e.g., Mobile) */
+
+@media (max-width: 767px) {
+  section {
+    width: 90%;
+    margin: 1rem auto;
+  }
 }
