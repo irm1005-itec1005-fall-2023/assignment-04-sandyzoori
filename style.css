@@ -22,7 +22,7 @@ main {
 
 /* Style the hero section */
 .hero {
-  background-image: url('./images/winnie.jpg');
+  background-image: url('./images/poohwinnie.jpg');
   height: 200px;
   background-size: cover;
   margin-bottom: 20px;
